@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "139538988190",
+    "project_id": "mednavi-7353a",
+    "storage_bucket": "mednavi-7353a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139538988190:android:8eb618a97104abf2da0f8f",
+        "android_client_info": {
+          "package_name": "com.example.mednavi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu--DGI3_GnF671BHyuSRDddhug__GS4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
