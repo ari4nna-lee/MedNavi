@@ -1,18 +1,15 @@
 package com.example.mednavi;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,7 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -32,12 +28,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements CategoryRVAdapter.CategoryClickInterface{
-    FirebaseFirestore fStore;
-    String userID;
-    FirebaseAuth auth;
-    FirebaseUser user;
-    TextView welcomeText;
+public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter.CategoryClickInterface{
 
     // API Key: 6853562a0807424b88292744f1fc34ea
 
@@ -64,22 +55,6 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
         getCategories();
         getNews("Health");
         newsRVAdapter.notifyDataSetChanged();
-
-        welcomeText = findViewById(R.id.main_title);
-
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-        fStore = FirebaseFirestore.getInstance();
-
-        userID = auth.getCurrentUser().getUid();
-
-        DocumentReference documentReference = fStore.collection("users").document(userID);
-        ListenerRegistration registration = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                welcomeText.setText("welcome back, " + documentSnapshot.getString("fName") + "!");
-            }
-        });
 
     }
 
@@ -122,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
 
             @Override
             public void onFailure(Call<NewsModel> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Fail to get news", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewsActivity.this, "Fail to get news", Toast.LENGTH_SHORT).show();
             }
         });
     }

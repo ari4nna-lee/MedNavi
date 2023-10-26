@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/dark_teal"
+    tools:context=".NewsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:text="News"
+                android:textSize="25sp"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvCategories"
+        android:orientation="horizontal"
+        android:layout_below="@id/toolbar"
+        tools:listitem="@layout/categories_rv_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/news_rv_item"
+        android:layout_below="@id/rvCategories"
+        android:id="@+id/rvNews"
+        android:layout_marginTop="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_below="@id/rvNews"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bottom_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/rvNews"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/settings_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="@drawable/settings_icon" />
+
+            <ImageView
+                android:id="@+id/maps_button"
+                android:layout_toRightOf="@+id/settings_button"
+                android:layout_width="50dp"
+                android:layout_height="57dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/maps_icon" />
+
+            <ImageView
+                android:id="@+id/home_button"
+                android:layout_toRightOf="@+id/maps_button"
+                android:layout_width="60dp"
+                android:layout_height="57dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/home_icon" />
+
+            <ImageView
+                android:id="@+id/resources_button"
+                android:layout_toRightOf="@+id/home_button"
+                android:layout_width="60dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/resources_icon" />
+
+            <ImageView
+                android:id="@+id/forum_button"
+                android:layout_toRightOf="@+id/resources_button"
+                android:layout_width="60dp"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/forum_bubble" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+</RelativeLayout>
