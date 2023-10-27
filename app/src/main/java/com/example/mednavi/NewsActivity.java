@@ -41,7 +41,7 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_news);
         newsRV = findViewById(R.id.rvNews);
         categoryRV = findViewById(R.id.rvCategories);
         loadingPB = findViewById(R.id.pbLoading);
