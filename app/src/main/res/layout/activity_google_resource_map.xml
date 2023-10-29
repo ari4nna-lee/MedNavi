@@ -1,23 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_teal"
     tools:context=".GoogleResourceMap">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:text="Resource Map"
+                android:textSize="25sp"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.fragment.app.FragmentContainerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:id="@+id/maps"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:name="com.google.android.gms.maps.SupportMapFragment">
 
     </androidx.fragment.app.FragmentContainerView>
 
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/bottom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/rvNews"
+        android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/settings_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/settings_icon" />
+
+        <ImageView
+            android:id="@+id/maps_button"
+            android:layout_toRightOf="@+id/settings_button"
+            android:layout_width="50dp"
+            android:layout_height="57dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/maps_icon" />
+
+        <ImageView
+            android:id="@+id/home_button"
+            android:layout_toRightOf="@+id/maps_button"
+            android:layout_width="60dp"
+            android:layout_height="57dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/home_icon" />
+
+        <ImageView
+            android:id="@+id/resources_button"
+            android:layout_toRightOf="@+id/home_button"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/resources_icon" />
+
+        <ImageView
+            android:id="@+id/forum_button"
+            android:layout_toRightOf="@+id/resources_button"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/forum_bubble" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -73,6 +73,7 @@
     </ScrollView>
 
     <RelativeLayout
+        android:background="@color/white"
         android:id="@+id/bottom_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +85,7 @@
             android:id="@+id/settings_button"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginHorizontal="12dp"
             android:background="@drawable/settings_icon" />
 
@@ -94,7 +95,7 @@
             android:layout_width="50dp"
             android:layout_height="57dp"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/maps_icon" />
 
         <ImageView
@@ -103,7 +104,7 @@
             android:layout_width="60dp"
             android:layout_height="57dp"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/home_icon" />
 
         <ImageView
@@ -112,7 +113,7 @@
             android:layout_width="60dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/resources_icon" />
 
         <ImageView
@@ -121,7 +122,7 @@
             android:layout_width="60dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/forum_bubble" />
 
         </RelativeLayout>
