@@ -14,6 +14,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.mednavi.databinding.ActivityGoogleResourceMapBinding;
 
@@ -195,6 +196,26 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
                         .position(gville_hc).title("Greenville Health Care")
                         .snippet("Medicare/Medicaid accepted"))
                 .setIcon(BitmapDescriptorFactory.fromBitmap(uc_icon));
+
+        // Free/Charitable Clinics of NC
+        LatLng comm_crossroads_clinic = new LatLng(35.604840, -77.387980);
+        LatLng pitt_county_care_clinic = new LatLng(35.637310, -77.363600);
+        LatLng watch_healthcare = new LatLng(35.398628, -77.952431); // Must be uninsured and from Wayne County
+        LatLng merci_clinic = new LatLng(35.111290, -77.068900); // Must be Craven/Jones/Pamlico, uninsured, within 250% poverty level
+        LatLng catholic_charities = new LatLng(35.109700, -77.039080); // Check elibility
+        LatLng hope_clinic = new LatLng(35.143780, -76.770460);
+        LatLng caring_comm_clinic = new LatLng(34.762010, -77.379850);
+        LatLng broad_st_clinic = new LatLng(34.732820, -76.753220);
+        LatLng healthnet_albe = new LatLng(36.311350, -76.221710);
+        LatLng comm_clinic_dare = new LatLng(35.976950, -75.648470);
+        LatLng cape_fear_clinic = new LatLng(34.206010, -77.927000);
+
+        // Uninsured, Sliding Scale (Greene Co.)
+        LatLng reynolds_medical_center = new LatLng(35.453640, -77.682160);
+        LatLng bernstein_chc_dental = new LatLng(35.652750, -77.370190);
+        LatLng pamlico_chc_dental = new LatLng(35.142510, -76.772680);
+        LatLng greene_dental = new LatLng(35.453900, -77.681460);
+        LatLng snow_hill_integrated = new LatLng(35.441560, -77.660590);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(ecu_health_mc));
     }

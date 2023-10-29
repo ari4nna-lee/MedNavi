@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity{
     TextView welcomeText;
     CardView newsCard;
     ImageView mapsIcon;
+    Button openCalendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity{
         newsCard = findViewById(R.id.cardViewNews);
 
         mapsIcon = findViewById(R.id.maps_button);
+        openCalendar = findViewById(R.id.view_calendar);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -79,6 +81,15 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), GoogleResourceMap.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        openCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CalendarWebView.class);
                 startActivity(intent);
                 finish();
             }
