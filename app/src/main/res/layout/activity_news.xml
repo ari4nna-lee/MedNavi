@@ -23,8 +23,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="20dp"
                 android:text="News"
+                android:fontFamily="@font/hagrid"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="25sp"/>
 
         </RelativeLayout>
@@ -42,7 +45,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="434dp"
+        android:layout_height="440dp"
         android:fillViewport="true"
         tools:listitem="@layout/news_rv_item"
         android:layout_below="@id/rvCategories"
@@ -102,22 +105,23 @@
             android:background="@drawable/home_icon" />
 
         <ImageView
-            android:id="@+id/resources_button"
+            android:id="@+id/news_button"
             android:layout_toRightOf="@+id/home_button"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/dark_teal"
+            android:background="@drawable/news_icon" />
+
+        <ImageView
+            android:id="@+id/resources_button"
+            android:layout_toRightOf="@+id/news_button"
             android:layout_width="60dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/resources_icon" />
-
-        <ImageView
-            android:id="@+id/forum_button"
-            android:layout_toRightOf="@+id/resources_button"
-            android:layout_width="60dp"
-            android:layout_height="56dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/forum_bubble" />
 
     </RelativeLayout>
 

@@ -19,15 +19,17 @@
             android:scaleType="centerCrop"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_centerInParent="true"
             android:text="Category"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:fontFamily="@font/dmsans"
             android:textAlignment="center"
-            android:padding="3dp"
+            android:background="@color/dark_teal"
+            android:padding="5dp"
             android:id="@+id/tvCategory"/>
 
 

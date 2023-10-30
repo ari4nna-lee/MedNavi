@@ -1,18 +1,16 @@
 package com.example.mednavi;
 
-import androidx.appcompat.content.res.AppCompatResources;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 
 import android.animation.LayoutTransition;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.transition.AutoTransition;
-import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -75,6 +73,9 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
     private ArrayList<Marker>medicareOnly = new ArrayList<>();
     private ArrayList<Marker>onlineCare = new ArrayList<>();
 
+    private ImageView homeIcon;
+    private ImageView newsButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +116,27 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
         layout.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         layout_2.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
         layout_3.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
+
+        homeIcon = findViewById(R.id.home_button);
+        newsButton = findViewById(R.id.news_button);
+
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        newsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     /**
@@ -201,7 +223,6 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
         LatLng wilson_immed = new LatLng(35.719750, -77.945330);
         LatLng fastmed_urg_mcity = new LatLng(34.726610, -76.758570);
         LatLng med_first_swans = new LatLng(34.694530, -77.131860);
-        LatLng med_first_nb = new LatLng(35.034490, -77.012890);
         LatLng cchc_urg = new LatLng(35.105410, -77.092670);
         LatLng quicker_care = new LatLng(34.859530, -76.897620);
         LatLng carolinas_urg = new LatLng(34.730450, -76.775980);

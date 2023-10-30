@@ -6,11 +6,14 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:gravity="center"
+    android:background="@color/dark_teal"
     android:layout_height="match_parent"
     tools:context=".Register">
 
     <TextView
         android:text="@string/register"
+        android:fontFamily="@font/hagrid"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -25,6 +28,8 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/lighter_green"
+            android:fontFamily="@font/dmsans"
             android:hint="Name"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,6 +43,8 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/lighter_green"
+            android:fontFamily="@font/dmsans"
             android:hint="Email"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,6 +58,8 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/lighter_green"
+            android:fontFamily="@font/dmsans"
             android:hint="Password"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -63,6 +72,9 @@
 
     <Button
         android:text="@string/sign_up"
+        android:fontFamily="@font/dmsans"
+        android:backgroundTint="@color/light_teal"
+        android:textColor="@color/black_shade_1"
         android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,6 +83,8 @@
     <TextView
         android:id="@+id/or_login"
         android:text="Already have an account? Click to login"
+        android:textColor="@color/white"
+        android:fontFamily="@font/dmsans"
         android:gravity="center"
         android:textSize="16sp"
         android:layout_width="match_parent"

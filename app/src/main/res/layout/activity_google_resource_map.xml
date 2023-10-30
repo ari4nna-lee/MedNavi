@@ -25,6 +25,9 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
                 android:text="Resource Map"
+                android:fontFamily="@font/hagrid"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:textSize="25sp"/>
 
         </RelativeLayout>
@@ -32,7 +35,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.fragment.app.FragmentContainerView
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
         android:layout_height="340dp"
         android:id="@+id/maps"
@@ -57,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/dark_teal"
@@ -74,6 +77,8 @@
                         android:id="@+id/free_charitable_cat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Free/Charitable Clinics of NC"
                         android:checked="true"
                         android:textSize="20sp" />
@@ -90,6 +95,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/dmsans"
                             android:text="Pharmacy/Prescription Services"
                             android:textSize="15sp" />
 
@@ -98,6 +105,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/dmsans"
                             android:text="Social Services"
                             android:textSize="15sp" />
 
@@ -106,6 +115,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/dmsans"
                             android:text="Lab Services"
                             android:textSize="15sp" />
 
@@ -114,6 +125,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/dmsans"
                             android:text="Primary Care"
                             android:textSize="15sp" />
 
@@ -122,6 +135,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="true"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/dmsans"
                             android:text="Bilingual Staff"
                             android:textSize="15sp" />
 
@@ -154,6 +169,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Uninsured Patients, Sliding Scale System"
                         android:textSize="20sp" />
 
@@ -162,6 +179,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Pediatric Care"
                         android:textSize="15sp" />
 
@@ -170,6 +189,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Adult Care"
                         android:textSize="15sp" />
 
@@ -178,6 +199,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Family Medicine"
                         android:textSize="15sp" />
 
@@ -186,6 +209,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Behavioral Health"
                         android:textSize="15sp" />
 
@@ -194,6 +219,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Primary Care"
                         android:textSize="15sp" />
 
@@ -225,6 +252,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Urgent Care Locations"
                         android:textSize="20sp" />
 
@@ -233,6 +262,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Medicare/Medicaid Accepted"
                         android:textSize="15sp" />
 
@@ -241,6 +272,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Medicare Only"
                         android:textSize="15sp" />
 
@@ -249,6 +282,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/dmsans"
                         android:text="Online Care Provided"
                         android:textSize="15sp" />
 
@@ -257,9 +292,14 @@
             </androidx.cardview.widget.CardView>
 
             <CheckBox
+                android:id="@+id/ecu_health_check"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:checked="true"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/dmsans"
                 android:text="ECUHealth Hospitals"
                 android:textColor="@color/white"/>
 
@@ -269,6 +309,7 @@
                 android:text="Missing a Location? Wrong Information?"
                 android:padding="16dp"
                 android:backgroundTint="@color/light_teal"
+                android:textColor="@color/black_shade_1"
                 android:layout_gravity="center"/>
 
         </LinearLayout>
@@ -312,22 +353,22 @@
             android:background="@drawable/home_icon" />
 
         <ImageView
-            android:id="@+id/resources_button"
+            android:id="@+id/news_button"
             android:layout_toRightOf="@+id/home_button"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/news_icon" />
+
+        <ImageView
+            android:id="@+id/resources_button"
+            android:layout_toRightOf="@+id/news_button"
             android:layout_width="60dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/resources_icon" />
-
-        <ImageView
-            android:id="@+id/forum_button"
-            android:layout_toRightOf="@+id/resources_button"
-            android:layout_width="60dp"
-            android:layout_height="56dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/forum_bubble" />
 
     </RelativeLayout>
 

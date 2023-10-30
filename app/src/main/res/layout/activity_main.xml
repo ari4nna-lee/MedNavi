@@ -26,13 +26,16 @@
 
             <TextView
                 android:id="@+id/main_title"
-                android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="30dp"
                 android:text="Welcome back, "
-                android:textSize="25sp"/>
+                android:fontFamily="@font/hagrid"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
 
         </RelativeLayout>
 
@@ -55,10 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/light_teal"
+                android:backgroundTint="@color/lighter_green"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="10dp">
 
@@ -70,6 +72,8 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/dmsans"
+                    android:textColor="@color/black_shade_1"
                     android:text="New Events Near You:"
                     android:textSize="25dp" />
 
@@ -82,6 +86,8 @@
                 android:padding="16dp"
                 android:text="View more events"
                 android:layout_gravity="center"
+                android:fontFamily="@font/dmsans"
+                android:textColor="@color/black_shade_1"
                 android:backgroundTint="@color/light_teal"/>
 
         </LinearLayout>
@@ -125,7 +131,7 @@
             android:backgroundTint="@color/dark_teal"/>
 
         <ImageView
-            android:id="@+id/resources_button"
+            android:id="@+id/news_button"
             android:layout_toRightOf="@+id/home_button"
             android:layout_width="55dp"
             android:layout_height="50dp"
@@ -134,8 +140,8 @@
             android:background="@drawable/news_icon" />
 
         <ImageView
-            android:id="@+id/news_button"
-            android:layout_toRightOf="@+id/resources_button"
+            android:id="@+id/resources_button"
+            android:layout_toRightOf="@+id/news_button"
             android:layout_width="60dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="12dp"

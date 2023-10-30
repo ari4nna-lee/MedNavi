@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name = "dark_teal">#416B56</color>
     <color name = "light_teal">#A0D2B1</color>
+    <color name = "lighter_green">#F2FFEA</color>
     <color name = "black_shade_1">#292D36</color>
     <color name = "grey">#424242</color>
 </resources>

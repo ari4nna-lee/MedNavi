@@ -7,10 +7,13 @@
     android:padding="15dp"
     android:gravity="center"
     android:layout_height="match_parent"
+    android:background="@color/dark_teal"
     tools:context=".Login">
 
     <TextView
         android:text="@string/login"
+        android:fontFamily="@font/hagrid"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_width="match_parent"
@@ -26,6 +29,8 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans"
+            android:backgroundTint="@color/lighter_green"
             android:hint="Email"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,6 +44,8 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans"
+            android:backgroundTint="@color/lighter_green"
             android:hint="Password"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,6 +58,9 @@
 
     <Button
         android:text="@string/login"
+        android:fontFamily="@font/dmsans"
+        android:backgroundTint="@color/light_teal"
+        android:textColor="@color/black_shade_1"
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +68,9 @@
 
     <TextView
         android:id="@+id/or_signup"
-        android:text="Don't have an account? Click to sign up"
+        android:text="Don't have an account? Click here to sign up"
+        android:textColor="@color/white"
+        android:fontFamily="@font/dmsans"
         android:gravity="center"
         android:textSize="16sp"
         android:layout_width="match_parent"

@@ -1,7 +1,9 @@
 package com.example.mednavi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,11 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
     private ArrayList<CategoryRVModel> categoryRVModelArrayList;
     private CategoryRVAdapter categoryRVAdapter;
     private NewsRVAdapter newsRVAdapter;
+
+    private ImageView mapsIcon;
+    private ImageView newsIcon;
+    private ImageView homeIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +62,37 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
         getCategories();
         getNews("Health");
         newsRVAdapter.notifyDataSetChanged();
+
+        mapsIcon = findViewById(R.id.maps_button);
+        newsIcon = findViewById(R.id.news_button);
+        homeIcon = findViewById(R.id.home_button);
+
+        newsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        mapsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GoogleResourceMap.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
