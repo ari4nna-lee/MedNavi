@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity{
     TextView welcomeText;
     CardView newsCard;
     ImageView mapsIcon;
+    ImageView newsIcon;
     Button openCalendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity{
         newsCard = findViewById(R.id.cardViewNews);
 
         mapsIcon = findViewById(R.id.maps_button);
+        newsIcon = findViewById(R.id.news_button);
+
         openCalendar = findViewById(R.id.view_calendar);
 
         auth = FirebaseAuth.getInstance();
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        newsCard.setOnClickListener(new View.OnClickListener() {
+        newsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), NewsActivity.class);

@@ -34,16 +34,246 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="340dp"
         android:id="@+id/maps"
         android:name="com.google.android.gms.maps.SupportMapFragment">
 
     </androidx.fragment.app.FragmentContainerView>
 
-    <CheckBox
+    <ScrollView
+        android:id="@+id/scrollable_panels"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:animateLayoutChanges="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/dark_teal"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/free_charitable_cat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free/Charitable Clinics of NC"
+                        android:checked="true"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/pharm_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Pharmacy/Prescription Services"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/social_services_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Social Services"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/lab_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Lab Services"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/primary_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Primary Care"
+                            android:textSize="15sp" />
+
+                        <CheckBox
+                            android:id="@+id/billingual_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Bilingual Staff"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/dark_teal"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/sliding_care"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Uninsured Patients, Sliding Scale System"
+                        android:textSize="20sp" />
+
+                    <CheckBox
+                        android:id="@+id/pediatric_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Pediatric Care"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/adult_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Adult Care"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/fam_med_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Family Medicine"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/behavioral_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Behavioral Health"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/dental_sliding_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Primary Care"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/dark_teal"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/urgent_care_cat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Urgent Care Locations"
+                        android:textSize="20sp" />
+
+                    <CheckBox
+                        android:id="@+id/medicare_medicaid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Medicare/Medicaid Accepted"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/medicare_only"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Medicare Only"
+                        android:textSize="15sp" />
+
+                    <CheckBox
+                        android:id="@+id/online_care"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Online Care Provided"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="ECUHealth Hospitals"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Missing a Location? Wrong Information?"
+                android:padding="16dp"
+                android:backgroundTint="@color/light_teal"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <RelativeLayout
         android:background="@color/white"
@@ -69,7 +299,8 @@
             android:layout_height="57dp"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/maps_icon" />
+            android:background="@drawable/maps_icon"
+            android:backgroundTint="@color/dark_teal"/>
 
         <ImageView
             android:id="@+id/home_button"
