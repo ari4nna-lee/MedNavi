@@ -43,7 +43,148 @@
                 app:cardElevation="10dp">
 
                 <LinearLayout
-                    android:id="@+id/lin_layout"
+                    android:id="@+id/lin_layout_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/education_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_one"
+                        android:text="Education"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/education_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Educational attainment is a key social determinant of health, as it influences an individual's access to better job opportunities, income, and socioeconomic status. Inadequate education can perpetuate cycles of poverty and health disparities. \n\nLearn more about local schools, academic programs, and district policies on the NCDPI website: https://files.nc.gov/dpi/documents/nceddirectory/schools.pdf. \n\nNCDPI also provides a list of rsources for students and families to help with education-related issues: https://schs.dph.ncdhhs.gov/units/ldas/cha2019/Mecklenburg%20CHA%202019.pdf \n\nTake Action! Volunteering as a mentor or tutor can be a rewarding way to contribute to the success of students in your community."
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/food_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_two"
+                        android:text="Food"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/food_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Access to nutritious food is an integral component of individuals health and well-being. \n\nFood Bank of Central and Eastern NC Food Finder: https://foodbankcenc.org/food-finder/ \n\nFeeding America Food Bank Finder: https://www.feedingamerica.org/hunger-in-america/north-carolina \n\nNeed Help Paying Bills -- provides a list of free food banks and pantries in your area: https://www.needhelppayingbills.com/html/food_banks.html \n\n Volunteering at a local food bank or community kitchen can help distribute food to those in need!"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/money_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_three"
+                        android:text="Money"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/money_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Financial stability and literacy determines access to quality healthcare, housing, and nutrition, all which impact health outcomes. Next Gen Personal Finance -- provides free financial literacy curriculum for high school and middle school students. https://www.ngpf.org/ \n\nEnglish for Financial Literacy -- instructor's resource for teaching financial literacy concepts in LINC and adult ESL programs: https://settlementatwork.org/resources/english-financial-literacy-volumes-1-3 \n\nNCDHHS Low-Income Services: https://www.ncdhhs.gov/assistance/low-income-services \n\nNC Resources for Job Seekers: https://www.commerce.nc.gov/jobs-training/resources-job-seekers"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:animateLayoutChanges="true"
@@ -57,7 +198,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/dmsans"
-                        android:onClick="expand"
+                        android:onClick="expand_four"
                         android:text="Insurance"
                         android:textColor="@color/black_shade_1"
                         android:textSize="25dp" />
@@ -69,7 +210,207 @@
                         android:layout_marginHorizontal="16dp"
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/dmsans"
-                        android:text="placeholder"
+                        android:text="Insurance provides a safety net that can protect against unexpected financial burdens. MedNavi's resource map and calendar focuses on services for uninsured patients, but resources are available to help you gain a better understanding of the plans available to you. \n\nNC Department of Insurance: https://my.ncdoi.com/home \n\nNational Association of Insurance Commissioners: https://content.naic.org/consumer"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/slidingscale_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_five"
+                        android:text="Sliding Scale"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/slidingscale_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Some clinics operate on a sliding scale, meaning that the amount you pay for care depends on your annual family income."
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/slidingscale_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Green County Health Care Sliding Fee Income Classes: https://gchcinc.org/wp-content/uploads/2018/10/Sliding-Fee-Scale-Medical-Dental.pdf"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/language_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_six"
+                        android:text="Language"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/language_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Language services and assistance play a crucial role in ensuring equitable access to resources and opportunities. MedNavi notes if certain clinics have bilingual staff on duty. Some more resources include: \n\nNCDHHS Medicaid Communication Access Services: https://www.ncdhhs.gov/dsdhh/medicaid \n\nNorth Carolina Justice Center - resources for immigrants and language access services: https://www.nccourts.gov/programs/office-of-language-access-services/about-office-of-language-access-services"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_seven"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/communityaccess_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_seven"
+                        android:text="Community Access"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/communityaccess_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Community engagement and access to recreational activities can enhance physical health and social connections. To take action, consider volunteering at community centers, organizing local events, or participating in community improvement projects to strengthen the bonds in your neighborhood."
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/lighter_green"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lin_layout_eight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/housing_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:onClick="expand_eight"
+                        android:text="Housing"
+                        android:textColor="@color/black_shade_1"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/housing_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Access to affordable and safe housing significantly influences an individual's overall health. Here are resources for finding affordable housing, housing assistance programs, and information on tenant rights: \n\nNorth Carolina Housing Finance Agency - resources for finding affordable rental housing: https://www.nchfa.com/renters \n\nHUD- information on tenant rights, laws, and protections in NC: https://www.hud.gov/states/north_carolina/renting/tenantrights \n\nNCDHHS - housing and home improvement assistance to eligible individuals in NC: https://www.ncdhhs.gov/divisions/aging-and-adult-services/housing-and-home-improvement-assistance \n\nNCHAF - financial assistance to low-income homeowners in NC: https://nchaf.gov/eligibility/ "
                         android:textColor="@color/black_shade_1"
                         android:textSize="16dp"
                         android:visibility="gone" />
