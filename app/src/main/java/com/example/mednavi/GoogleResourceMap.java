@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,6 +35,7 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
     private LinearLayout layout_2;
     private LinearLayout layout_3;
 
+    private CheckBox ecuHealthHospitals;
     private CheckBox freeCharitable;
     private CheckBox pharm_check;
     private CheckBox social_services_check;
@@ -54,6 +58,7 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
     private GoogleMap mMap;
     private ActivityGoogleResourceMapBinding binding;
 
+    private ArrayList<Marker>totalECUHealth = new ArrayList<>();
     private ArrayList<Marker>totalFreeCharitable = new ArrayList<>();
     private ArrayList<Marker>freePharmacyServices = new ArrayList<>();
     private ArrayList<Marker>freeSocialServices = new ArrayList<>();
@@ -75,6 +80,8 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
 
     private ImageView homeIcon;
     private ImageView newsButton;
+    private ImageView settingsButton;
+    private Button missingLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +100,7 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
         layout_2 = findViewById(R.id.layout_2);
         layout_3 = findViewById(R.id.layout_3);
 
+        ecuHealthHospitals = findViewById(R.id.ecu_health_check);
         freeCharitable = findViewById(R.id.free_charitable_cat);
         slidingScale = findViewById(R.id.sliding_care);
         urgentCare = findViewById(R.id.urgent_care_cat);
@@ -119,6 +127,8 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
 
         homeIcon = findViewById(R.id.home_button);
         newsButton = findViewById(R.id.news_button);
+        settingsButton = findViewById(R.id.settings_button);
+        missingLocation = findViewById(R.id.missing_location);
 
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,6 +145,23 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
                 Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        missingLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSegOevUhOH5q-RaDsO1zCxmQyzD0uj70nBqM5z_TWN6---scQ/viewform?usp=sf_link"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
     }
@@ -173,42 +200,45 @@ public class GoogleResourceMap extends FragmentActivity implements OnMapReadyCal
         LatLng ecu_health_north = new LatLng(36.432380, -77.646220);
         LatLng ecu_health_roanoke = new LatLng(36.291510, -76.987730);
         LatLng ecu_health_obx = new LatLng(35.939690, -75.617820);
-        mMap.addMarker(new MarkerOptions()
+        Marker ecu_health_main = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_mc).title("ECU Health Medical Center")
-                        .snippet("2100 Stantonsburg Rd, Greenville, NC 27834 \n (252)-975-4100"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("2100 Stantonsburg Rd, Greenville, NC 27834 \n (252)-975-4100"));
+        ecu_health_main.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_beaufort = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_beaufort).title("ECU Health Beaufort Hospital")
-                        .snippet("628 E 12th St, Washington, NC 27889 \n (252)-975-4100"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("628 E 12th St, Washington, NC 27889 \n (252)-975-4100"));
+        ecu_beaufort.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_bertie = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_bertie).title("ECU Health Bertie Hospital")
-                        .snippet("1403 S King St, Windsor, NC, 27983 \n (252)-794-6600"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("1403 S King St, Windsor, NC, 27983 \n (252)-794-6600"));
+        ecu_bertie.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_chowan = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_chowan).title("ECU Health Chowan Hospital")
-                        .snippet("211 Virginia Rd, Edenton, NC, 27932 \n (252)-482-8451"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("211 Virginia Rd, Edenton, NC, 27932 \n (252)-482-8451"));
+        ecu_chowan.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_duplin = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_duplin).title("ECU Health Duplin Hospital")
-                        .snippet("401 N. Main St, Kenansville, NC, 28349 \n (910)-296-0941"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("401 N. Main St, Kenansville, NC, 28349 \n (910)-296-0941"));
+        ecu_duplin.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_edge = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_edge).title("ECU Health Edgecombe Hospital")
-                        .snippet("111 Hospital Dr, Tarboro, NC, 27886 \n (252)-641-7700"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("111 Hospital Dr, Tarboro, NC, 27886 \n (252)-641-7700"));
+        ecu_edge.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_north = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_north).title("ECU Health North Hospital")
-                        .snippet("250 Smith Church Rd, Roanoke Rapids, NC, 27870 \n (252)-535-8011"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("250 Smith Church Rd, Roanoke Rapids, NC, 27870 \n (252)-535-8011"));
+        ecu_north.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_roanoke = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_roanoke).title("ECU Health Roanoke-Chowan Hospital")
-                        .snippet("500 S Academy St, Ahoskie, NC, 27910 \n (252)-209-3000"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
-        mMap.addMarker(new MarkerOptions()
+                        .snippet("500 S Academy St, Ahoskie, NC, 27910 \n (252)-209-3000"));
+        ecu_roanoke.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+        Marker ecu_obx = mMap.addMarker(new MarkerOptions()
                         .position(ecu_health_obx).title("The Outer Banks Hospital")
-                        .snippet("4800 S Croatan Hwy, Nags Head, NC, 27959 \n (252)-449-4500"))
-                .setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+                        .snippet("4800 S Croatan Hwy, Nags Head, NC, 27959 \n (252)-449-4500"));
+        ecu_obx.setIcon(BitmapDescriptorFactory.fromBitmap(hospital_icon));
+
+        totalECUHealth.add(ecu_health_main); totalECUHealth.add(ecu_beaufort); totalECUHealth.add(ecu_bertie); totalECUHealth.add(ecu_chowan); totalECUHealth.add(ecu_duplin); totalECUHealth.add(ecu_edge); totalECUHealth.add(ecu_north); totalECUHealth.add(ecu_roanoke); totalECUHealth.add(ecu_obx);
+        checkAndUncheck(ecuHealthHospitals, totalECUHealth);
 
         // Urgent Care Locations
         LatLng phys_east_urg = new LatLng(35.568870, -77.356370);

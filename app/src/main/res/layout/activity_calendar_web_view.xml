@@ -26,6 +26,7 @@
         android:layout_height="450dp" />
 
     <Button
+        android:id="@+id/missing_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Event Missing? Add One Here!"

@@ -2,20 +2,16 @@ package com.example.mednavi;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -25,41 +21,33 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+public class SettingsPage extends AppCompatActivity {
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+    TextView name, email, city;
 
-public class MainActivity extends AppCompatActivity{
+    Button buttonLogOut;
+    FirebaseAuth auth;
     FirebaseFirestore fStore;
     String userID;
-    FirebaseAuth auth;
     FirebaseUser user;
-    TextView welcomeText;
-    CardView newsCard;
     ImageView mapsIcon;
     ImageView newsIcon;
     ImageView resourcesIcon;
-    ImageView settingsIcon;
-    Button openCalendar;
+    ImageView homeIcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        welcomeText = findViewById(R.id.main_title);
-        newsCard = findViewById(R.id.cardViewNews);
-
+        setContentView(R.layout.activity_settings_page);
         mapsIcon = findViewById(R.id.maps_button);
         newsIcon = findViewById(R.id.news_button);
         resourcesIcon = findViewById(R.id.resources_button);
-        settingsIcon = findViewById(R.id.settings_button);
+        homeIcon = findViewById(R.id.home_button);
 
-        openCalendar = findViewById(R.id.view_calendar);
+        buttonLogOut = findViewById(R.id.logout_button);
+
+        name = findViewById(R.id.settings_name);
+        email = findViewById(R.id.settings_email);
+        city = findViewById(R.id.settings_city);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -68,12 +56,25 @@ public class MainActivity extends AppCompatActivity{
         userID = auth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fStore.collection("users").document(userID);
-        ListenerRegistration registration = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        ListenerRegistration nameSettings = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-                welcomeText.setText("welcome back, " + documentSnapshot.getString("fName") + "!");
+                name.setText("Name: " + documentSnapshot.getString("fName"));
             }
         });
+        ListenerRegistration emailSettings = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                email.setText("Email: " + documentSnapshot.getString("email"));
+            }
+        });
+        ListenerRegistration citySettings = documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                city.setText("City: " + documentSnapshot.getString("city"));
+            }
+        });
+
 
         newsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,24 +103,27 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        settingsIcon.setOnClickListener(new View.OnClickListener() {
+        homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SettingsPage.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        openCalendar.setOnClickListener(new View.OnClickListener() {
+        buttonLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CalendarWebView.class);
+            public void onClick(View v) {
+                nameSettings.remove();
+                emailSettings.remove();
+                citySettings.remove();
+                auth.signOut();
+                Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
                 finish();
             }
         });
 
     }
-
 }

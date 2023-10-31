@@ -44,6 +44,8 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
     private ImageView mapsIcon;
     private ImageView newsIcon;
     private ImageView homeIcon;
+    private ImageView settingsIcon;
+    private ImageView resourcesIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,8 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
         mapsIcon = findViewById(R.id.maps_button);
         newsIcon = findViewById(R.id.news_button);
         homeIcon = findViewById(R.id.home_button);
+        settingsIcon = findViewById(R.id.settings_button);
+        resourcesIcon = findViewById(R.id.resources_button);
 
         newsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +97,22 @@ public class NewsActivity extends AppCompatActivity implements CategoryRVAdapter
                 finish();
             }
         });
-
+        settingsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SettingsPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        resourcesIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ResourcesPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void getCategories() {

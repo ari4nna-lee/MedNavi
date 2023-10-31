@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText editTextName, editTextEmail, editTextPassword;
+    TextInputEditText editTextName, editTextEmail, editTextPassword, editCity;
     Button buttonLogin;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -56,6 +56,7 @@ public class Register extends AppCompatActivity {
         editTextName = findViewById(R.id.name);
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
+        editCity = findViewById(R.id.city);
         buttonLogin = findViewById(R.id.signUpButton);
         progressBar = findViewById(R.id.progressBar);
         loginNow = findViewById(R.id.or_login);
@@ -74,9 +75,10 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                String name, email, password;
+                String name, email, city, password;
                 name = String.valueOf(editTextName.getText());
                 email = String.valueOf(editTextEmail.getText());
+                city = String.valueOf(editCity.getText());
                 password = String.valueOf(editTextPassword.getText());
 
                 if (TextUtils.isEmpty(name)) {
@@ -86,6 +88,11 @@ public class Register extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(Register.this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(city)) {
+                    Toast.makeText(Register.this, "Please enter your city", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -107,6 +114,8 @@ public class Register extends AppCompatActivity {
                                     Map<String,Object> user = new HashMap<>();
                                     user.put("fName", name);
                                     user.put("email", email);
+                                    user.put("city", city);
+                                    user.put("password", password);
                                     documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
